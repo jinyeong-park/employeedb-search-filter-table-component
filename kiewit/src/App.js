@@ -1,16 +1,14 @@
 import './App.css';
 import data from './data.js';
-import DisplayEmployee from './components/DisplayEmployee'
+import SearchPage from './components/SearchPage'
+
 
 function App() {
 
   return (
     <div className="App">
       <h1>Employee Database</h1>
-
-      <DisplayEmployee data={data}/>
-
-
+      <SearchPage data={data}/>
     </div>
   );
 }
