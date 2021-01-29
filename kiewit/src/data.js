@@ -35,3 +35,5 @@ var employee_data = [
     age: 39,
   },
 ];
+
+export default employee_data
