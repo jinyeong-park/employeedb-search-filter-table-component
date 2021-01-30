@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import employeeData from './data.js';
-import TableLayout from './components/TableLayout';
+import Table from './components/Table';
 
 function App() {
   const [data, setData] = useState(employeeData);
   const [q, setQ] = useState('');
-  const [searchColumns, setSearchColumns] = useState(["name", "department"])
+  const [searchColumns, setSearchColumns] = useState(["name"])
 
   // useEffect(() => {
   // }, [])
@@ -14,7 +14,6 @@ function App() {
 
   // search by name, department, age(toString())
   function search(rows) {
-    // const columns = rows[0] && Object.keys(rows[0])
     return rows.filter(row =>
       searchColumns.some((column) => row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1))
   }
@@ -22,8 +21,9 @@ function App() {
   const columns = data[0] && Object.keys(data[0])
   return (
     <div className="App">
+      <h1>Employee DB</h1>
       <div>
-        <input className="app__searchbar" type='text' value={q} placeholder="Search.." onChange={(e) => setQ(e.target.value)} />
+        <input className="app__searchbar" type='text' value={q} placeholder="Search or Filter.." onChange={(e) => setQ(e.target.value)} />
         {
           columns && columns.map(column => (<label>
             <input type="checkbox" checked={searchColumns.includes(column)}
@@ -41,7 +41,7 @@ function App() {
           ))
         }
       </div>
-      <TableLayout data={search(data)}/>
+      <Table data={search(data)}/>
     </div>
   );
 }

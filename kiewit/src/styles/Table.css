@@ -1,0 +1,40 @@
+.display__employee {
+  margin-top: 30px;
+
+}
+
+.employee {
+  margin: 10px
+}
+
+.table {
+  margin-top: 20px;
+  overflow: hidden;
+  height: 400px;
+  color: #868484;
+  background-color: white;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+
+}
+
+
+
+.table tr {
+  display: flex;
+  justify-content:space-between;
+
+
+}
+
+.table td {
+  padding: 0.5rem;
+  border: none;
+}
+
+
+.table tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
