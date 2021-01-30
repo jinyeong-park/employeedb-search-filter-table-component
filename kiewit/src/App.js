@@ -13,11 +13,18 @@ function App() {
   //   .then((json) => setData(json));
   // }, [])
 
+  // Search: indexOf() or includes()
+  function search(rows) {
+    return rows.filter(row => row.name.toLowerCase().indexOf(q) > -1)
+  }
+
 
   return (
     <div className="App">
-      <div>Filter goes here</div>
-      <TableLayout data={data}/>
+      <div>
+        <input type='text' value={q} onChange={(e) => setQ(e.target.value)} />
+      </div>
+      <TableLayout data={search(data)}/>
     </div>
   );
 }
