@@ -8,7 +8,7 @@ function Table({data}) {
     <table cellPadding={0} celllSpacing={0} className="table">
       <thead>
         {/* Header */}
-        <tr className={"table__row"}>{data[0] && columns.map(heading => <th>{heading}</th>)}</tr>
+        <tr>{data[0] && columns.map(heading => <th>{heading}</th>)}</tr>
 
       </thead>
 
