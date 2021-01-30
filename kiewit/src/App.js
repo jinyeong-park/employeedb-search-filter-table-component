@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState(employeeData);
   const [q, setQ] = useState('');
 
+
   // useEffect(() => {
   //   fetch("endpoint")
   //   .then((responnse) => response.json())
@@ -14,8 +15,11 @@ function App() {
   // }, [])
 
   // Search: indexOf() or includes()
+  // search by name, department, age(toString())
   function search(rows) {
-    return rows.filter(row => row.name.toLowerCase().indexOf(q) > -1)
+    const columns = rows[0] && Object.keys(rows[0])
+    return rows.filter(row =>
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1))
   }
 
 
