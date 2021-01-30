@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/SearchPage.css'
-import MaterialTable from "material-table";
 import TableLayout from './TableLayout'
+
 
 
 function SearchPage({data}) {
@@ -34,12 +34,13 @@ function SearchPage({data}) {
         <button onClick={() => updateResult(searchWord)}>
         Search!
         </button>
-        <br/>
+
       {/* Filter  */}
       <select>
         <option value="department">Department</option>
         <option value="age">Age</option>
       </select>
+
       <TableLayout data = {searchResult}/>
 
 
