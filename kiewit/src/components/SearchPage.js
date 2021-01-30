@@ -11,7 +11,7 @@ function SearchPage({data}) {
 
   const updateResult = (searchWord) => {
     if (searchWord === "") {
-      return setSearchResult(data)
+      setSearchResult(data)
 
     } else {
       const filtered = employListDefault.filter(employee => {
