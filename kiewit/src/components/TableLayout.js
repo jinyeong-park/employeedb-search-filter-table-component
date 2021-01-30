@@ -11,7 +11,12 @@ function TableLayout({data}) {
 
       </thead>
       <tbody>
-
+        {data.map(row => <tr>
+          {
+            columns.map((column) => <td>{row[column]}</td>)
+            }
+          </tr>
+          )}
 
       </tbody>
 
