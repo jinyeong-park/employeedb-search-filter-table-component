@@ -9,12 +9,9 @@ function App() {
   const [searchColumns, setSearchColumns] = useState(["name", "department"])
 
   // useEffect(() => {
-  //   fetch("endpoint")
-  //   .then((responnse) => response.json())
-  //   .then((json) => setData(json));
   // }, [])
 
-  // Search: indexOf() or includes()
+
   // search by name, department, age(toString())
   function search(rows) {
     // const columns = rows[0] && Object.keys(rows[0])
@@ -26,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <input type='text' value={q} placeholder="Search.." onChange={(e) => setQ(e.target.value)} />
+        <input className="app__searchbar" type='text' value={q} placeholder="Search.." onChange={(e) => setQ(e.target.value)} />
         {
           columns && columns.map(column => (<label>
             <input type="checkbox" checked={searchColumns.includes(column)}
@@ -50,20 +47,3 @@ function App() {
 }
 
 export default App;
-
-
-
-// function App() {
-
-
-
-
-//   return (
-//     <div className="App">
-//       <h1>Employee Database</h1>
-//       <SearchPage data={data}/>
-//     </div>
-//   );
-// }
-
-// export default App;
